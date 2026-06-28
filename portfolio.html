@@ -10,7 +10,10 @@
 
     <!--Menu de navegação-->
     <nav>
-        <ul class="menu">
+        <!--Botao para armazenar as opções em caso de telas menores-->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <ul class="menu" id="menu">
             <li><a href="index.html">Sobre mim</a></li>
             <li><a href="formacao.html">Formação</a></li>
             <li><a href="portfolio.html">Portfólio</a></li>
@@ -26,5 +29,27 @@
     <br>
     <a class="projetos" href="https://fabriciodev28.github.io/clone_spotify/">Clone Spotify</a>
     <img src="imgs/clonespotify.png" alt="clone_spotify" id="clone_spotify">
+    
+    
+<script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    toggle.addEventListener("click", () => {
+
+        menu.classList.toggle("active");
+
+        if(menu.classList.contains("active")){
+            toggle.innerHTML = "✕";
+            toggle.style.color = "white"
+            toggle.style.backgroundColor = "#0d47a1"
+        }else{
+            toggle.innerHTML = "☰";
+            toggle.style.color = "#0d47a1"
+            toggle.style.backgroundColor = "white"
+        }
+
+    });
+</script>
 </body>
 </html>
